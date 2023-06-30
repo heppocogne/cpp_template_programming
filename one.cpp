@@ -1,6 +1,6 @@
 #include <iostream>
 
-template <int n = 1>
+template <unsigned int n>
 struct One
 {
     static const constexpr long double value = One<n - 1>::value / 2.0 + 0.5;
@@ -12,7 +12,7 @@ struct One<0>
     static const constexpr long double value = 0;
 };
 
-template <int n = 1>
+template <unsigned int n>
 struct Two
 {
     static const constexpr long double value = Two<n - 1>::value / 2.0 + 1.0;

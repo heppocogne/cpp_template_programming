@@ -15,7 +15,7 @@ struct PreciseType<int_t, int_t>
     using type = int_t;
 };
 
-template <typename T, int n>
+template <typename T, unsigned int n>
 struct Vector
 {
 private:
@@ -109,7 +109,7 @@ public:
     }
 };
 
-template <typename T, int n>
+template <typename T, unsigned int n>
 std::ostream &operator<<(std::ostream &ost, Vector<T, n> v)
 {
     ost << "(";
@@ -127,7 +127,7 @@ std::ostream &operator<<(std::ostream &ost, Vector<T, n> v)
     return ost;
 }
 
-template <typename R, typename A, int n, typename T>
+template <typename R, typename A, unsigned int n, typename T>
 R operator*(const A &left, const Vector<T, n> &right)
 {
     return right * left;
